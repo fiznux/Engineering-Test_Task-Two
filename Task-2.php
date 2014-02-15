@@ -10,8 +10,9 @@ if (isset($_POST['_hidden']) && (filter_var($_POST['_hidden'], FILTER_SANITIZE_N
 	$to = filter_var($_POST['to'], FILTER_SANITIZE_NUMBER_INT);
 	$pull = '';
 	for($i=$from;$i<=$to;$i++){
-
-		if ($i%3 == 0) {
+		if (($i%3 == 0) && ($i%5 == 0)) {
+			$print = 'FizzBuzz';
+		}elseif ($i%3 == 0) {
 			$print = 'Fizz';
 		}elseif ($i%5 == 0){
 			$print = 'Buzz';
