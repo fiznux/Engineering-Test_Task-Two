@@ -1,7 +1,7 @@
 <?php
 echo '<form method="post" action"">';
-echo '<input name="from" placeholder="from" type="text" style="width:100px" value="'.filter_var($_POST['from'], FILTER_SANITIZE_NUMBER_INT).'" />';
-echo '<input name="to" placeholder="to" type="text" style="width:100px" value="'.filter_var($_POST['to'], FILTER_SANITIZE_NUMBER_INT).'" />';
+echo '<input name="from" placeholder="from" type="text" style="width:100px" value="'.(isset($_POST['from']) ? filter_var($_POST['from'], FILTER_SANITIZE_NUMBER_INT) : '').'" />';
+echo '<input name="to" placeholder="to" type="text" style="width:100px" value="'.(isset($_POST['to']) ? filter_var($_POST['to'], FILTER_SANITIZE_NUMBER_INT) : '').'" />';
 echo '<input name="_hidden" type="hidden" value="1" />';
 echo '<button type="submit">Go !</button>';
 echo '</form>';
